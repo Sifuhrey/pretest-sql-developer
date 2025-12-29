@@ -1,0 +1,18 @@
+1. CREATE TABLE table1(
+    id INT,
+    fullname VARCHAR(100),
+    email VARCHAR(50)
+);
+
+2. - Primary Key ada sebuah field yang bersifat UNIQUE dan NOT NULL. Primary Key berfungsi untuk memberikan identifier yang unik pada setiap data, sehingga data dapat dicari dengan mudah menggunakan SELECT dan klausa WHERE.
+   - Foreign Key adalah field yang merujuk kepada Primary Key dari tabel lain. Foreign Key sangat berguna ketika kita ingin menggunakan klausa JOIN.
+   - Index berguna untuk mempercepat pengambilan data dari suatu tabel. penggunaan Index adalah sebagai berikut
+     CREATE INDEX nama_index ON nama_tabel (nama_field,nama_field2,...)
+   - UNIQUE Constraint digunakan untuk memastikan bahwa semua data di sebuah kolom tidak ada yang duplikat, alias unik.
+
+3. INNER JOIN menampilkan data yang cocok di kedua tabel. Dalam query ini, data yang ditampilkan hanya data yang kecocokan antara primary key tabel pertama dengan foreign key yang merujuk pada tabel kedua. Artinya, pada table yang tidak mempunyai kecocokan itu, data tersebut tidak akan bisa ditampilkan.
+   LEFT JOIN menampilkan semua data yang ada di tabel pertama dan data dari tabel kedua yang memiliki kecocokan dengan tabel pertama dengan menggunakan perantara foreign key yang ada di tabel pertama.
+
+4. SELECT email FROM table1 WHERE id IN ( SELECT id FROM table1 WHERE email LIKE '%@gmail.com' );
+
+5. function hanya mengembalikan satu output, sedangkan procedure bisa mengembalikan satu atau lebih output. oleh karena itu, kita bisa menentukan parameter output untuk procedure.
